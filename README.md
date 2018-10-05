@@ -1,6 +1,6 @@
 # API Caching proxy
 
-This simple proxy caches existing API calls on Redis, expiries are configurable for each path.
+This simple proxy caches existing API calls on Redis, expiries are configurable for each route.
 
 ## Install
 

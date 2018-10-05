@@ -9,6 +9,14 @@ const set = (client, expiry, k, v) => {
   client.setex(k, expiry, v)
 }
 
+const getExpiry = () => {
+  try {
+    return expiries.expiries[k]
+  } catch (error) {
+    return expiries.expiries['*']
+  }
+}
+
 const get = (k, res) => {
   client.get(k, (err, data) => {
     if (err) {
@@ -19,7 +27,7 @@ const get = (k, res) => {
     } else {
       request.get(`${process.env.API_URL}/${k}`, (err, result) => {
         if (!err) {
-          set(client, expiries.expiries[k], k, result.text)
+          set(client, getExpiry(k), k, result.text)
           res.end(result.text)
         } else {
           res.send(500)

@@ -10,8 +10,8 @@ Example query:
 
 ```json
 {
-    action: 'API_CACHE',
-    query: 'beers/1'
+    "action": "API_CACHE",
+    "query": "beers/1"
 }
 ```
 

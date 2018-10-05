@@ -4,6 +4,11 @@ const expiries = {
   '*': 60
 }
 
+const USE_MORGAN = false
+const USE_WINSTON = true
+
 module.exports = {
-  expiries
+  expiries,
+  USE_MORGAN,
+  USE_WINSTON
 }
